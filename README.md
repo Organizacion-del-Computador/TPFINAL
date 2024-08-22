@@ -1,16 +1,13 @@
 # TPFINAL
 
-##Paginas de papers
-
+## Paginas de papers
 * https://annas-archive.org/
 * https://scholar.google.com/
 * https://es.z-library.rs/
 * https://www.scimagojr.com/
 * https://ieeexplore.ieee.org/Xplore/home.jsp
 
-
-##Listado de papers
-
+## Listado de papers
 * http://ieeexplore.ieee.org/document/8748495/
 * https://cse.usf.edu/~haozheng/ref/gpu_computing.pdf
 * https://www.researchgate.net/publication/261424611_Evolution_and_trends_in_GPU_computing
