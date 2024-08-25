@@ -18,3 +18,5 @@
 ## Ideas (o propuestas)
 * Computacion del renderizado 3D en GPU o (cpu), y las diferencias entre estos.
 * Aceleracion 3D (o aceleracion por hardware) 
+* Cuda CORES (o demas particularidades del interior del GPU)
+* Configs graficas en juegos, y su implicancia en la computacion del GPU.
