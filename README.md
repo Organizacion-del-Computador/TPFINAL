@@ -14,3 +14,7 @@
 * https://ieeexplore.ieee.org/document/6240658
 * https://www.researchgate.net/publication/224262634_GPUs_and_the_Future_of_Parallel_Computing
 * https://dl.acm.org/doi/10.1145/3570638
+
+## Ideas (o propuestas)
+* Computacion del renderizado 3D en GPU o (cpu), y las diferencias entre estos.
+* Aceleracion 3D (o aceleracion por hardware) 
