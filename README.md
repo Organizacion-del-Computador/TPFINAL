@@ -20,3 +20,4 @@
 * Aceleracion 3D (o aceleracion por hardware) 
 * Cuda CORES (o demas particularidades del interior del GPU)
 * Configs graficas en juegos, y su implicancia en la computacion del GPU.
+* Aplicacion de cosas vistas en la materia (caché, memoria, etc...)
