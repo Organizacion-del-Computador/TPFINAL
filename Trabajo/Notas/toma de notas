@@ -1,0 +1,26 @@
+MICROSOFT --> Más competitivo en el sentido de que quería hacer el producto lo más barato posible --> Ganaron gran parte del mercado. --> Servicios en línea mucho mejores (XBOX).
+
+
+
+
+SONY --> Quería hacer los productos más caros. La consola se centraba en poner DVD / Blue Ray. --> Problemas con el stock. No tenía tantas consolas para presentarlas el día del lanzamiento.
+
+Desarrollo: Querían revolucionar el gaming; necesitaban un procesador más poderoso y versátil de lo que había en ese momento. Colabora con IBM y Toshiba para hacer el procesador, y buscan hacer uno que no sea solo para gaming, sino para la computación en general (Entretenimiento de alta definición, retransmisión de multimedia, etc.).
+
+El procesador CELL tiene un inmenso poder computacional, pero se requería una nueva manera de programar y de usar sus capacidades. Está compuesto por:
+--> Un PPE.
+--> 8 SPE's.
+Esto era una arquitectura heterogénea, la cual estaba avanzada a su tiempo, pero requería una programación heterogénea y un manejo entre los distintos núcleos/subnúcleos. Por más de que no se pudiese aprovechar al 100% debido a la computación heterogénea que requería el procesador, se crearon juegos que aún así se veían bien. Uno de los problemas era que sólo se podían usar 6 de los 8 SPE's (uno estaba inhabilitado por la firma de la consola, ...).
+
+Otros usos del CELL: Además de los juegos, se usó para supercomputadoras, desarrollo científico y multimedia digital. También se encontraron usos en la medicina, en modelos de financiación y aeroespaciales.
+También podía realizar calculos complejos y procesar datos, que esto le fue útil a las industrias de computación de alto rendimiento. Dejó huella en el diseño de procesadores multi-core más nuevos, como también en el paralelismo entre los mismos. Esto por más del que el procesador no haya implementado estas nuevas teorías tecnológicas de manera equivocada.
+Ya que el CELL iba a ser un procesador de propósito general, se iba a considerar incluirlo en televisores, reproductores multimedia, etc. Sin embargo, debido al alto costo, no se hizo.
+
+
+
+
+NINTENDO --> Seguir la idea de Microsoft en cuanto a los precios accesibles. --> La WII no era tan potente, pero su enfoque era en los gestos con los controles.
+
+La industria del gaming en ese momento rondaba por un valor nominal de 10 billones de dólares en EE.UU.
+2005 --> Análisis del mercado --> todo iba bien.
+Sony dominó completamente la generación anterior de juegos con un 70% del mercado global, seguido de XBOX y Nintendo.
