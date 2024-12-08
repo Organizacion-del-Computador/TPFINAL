@@ -27,7 +27,7 @@
 	\end{abstract}
 	
 	\begin{IEEEkeywords}
-		SPE,PPE,SIMD,.
+		SPE,PPE,SIMD,Pipeline-ing, paralelismo, calculos vectoriales, computacion heterogenea.
 	\end{IEEEkeywords}
 	
 	\section{Introducción}
@@ -64,7 +64,10 @@
 	\noindent Diseñada por Sony, en conjunto con Toshiba e IBM, esta arquitectura trae al mercado un procesador que maneja fuertemente la computacion heterogenea, mediante el uso de sus 9 nucleos.  
 	
 	\subsection{Modulos, en general y separado} 
-	\noindent 
+	\noindent Para empezar, hablaremos del PPE (Power Processing Element). Este nucleo, es el principal de la arquitectura. Es de proposito general, y a su vez se encarga de controlar el resto de los sub-nucleos (cargar memoria y ejecutar instrucciones).\newline
+	
+	Luego, los SPE (Synergistic Processor Element), son los distintos sub-nucleos de la arquitectura. No son proposito general, mas bien se encargar de realizar operaciones vectoriales, encargadas desde el PPE. Cada uno tiene su memoria interna.
+	
 	
 	\subsection{Interconexion} 
 	\noindent 
@@ -83,7 +86,7 @@
 	
 	
 	\section{Inconveniencias}
-	\noindent Debido a que programar los distintos SSP requerían mucho tiempo, una gran cantidad  de desarrolladores pasaron por alto los programas apartes que requerian los mismos, y se centraban unicamente en el PPE. De modo que, todas las tareas eran realizadas por el PPE, lo cual provocó bajos rendimientos en los programas que corria el CELL, ya que sus SPE's quedaban inutilizados.
+	\noindent Debido a que programar los distintos SSP requerían mucho tiempo, una gran cantidad  de desarrolladores pasaron por alto los programas apartes que requerian los mismos, y se centraban unicamente en el PPE. De modo que, todas las tareas eran realizadas por el PPE, lo cual provocó bajos rendimientos en los programas que corria el CELL, ya que sus SPE's quedaban inutilizados.\newline
 	
 	Muchas tareas que se podian paralelizar, no se estaban ejecutando como debían, ni por los sub-nucleos especializados para eso. 
 	
@@ -128,6 +131,9 @@
 			\bibitem{ams}
 			{\it{Laboratorio de Arquitecturas Avanzadas con Cell y PlayStation 3}}, Universitat de València, por Fernando Pardo y Jose A. Boluda.
 			
+			\bibitem{ams}
+			{\it{The PlayStation 3 for High Performance Scientific Computing}}, University of Tennessee: Jakub Kurzak,		Alfredo Buttari, Piotr Luszczek, Jack Dongarra
+			
 			\bibitem{oxford}
 			{\it{Un vistazo al pasado, ¿cómo de potente fue PS3? }},https://www.3djuegos.com/ps3/noticias/un-vistazo-al-pasado-como-de-potente-fue-ps3-190331-91210
 		
@@ -163,6 +169,10 @@
 			\bibitem{ams}
 			{\it{Report from the video game wars: Wii vs. PS3 vs. Xbox360}}, 
 			https://www.copetti.org/writings/consoles/
+			
+			
+
+			
 		
 		\end{thebibliography}
 		
