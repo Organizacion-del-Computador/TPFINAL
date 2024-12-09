@@ -108,10 +108,10 @@
 	 
 	 El codigo destinado a los SPE's debe ser escrito aparte del programa del PPE, y traducido a codigo maquina por compiladores especificos de SPE's
 	
-	\subsection{Diferencias con arquitecturas actuales}
+	\subsection{Contraste con arquitecturas actuales}
 	\noindent La idea del CellBE era aplicar el tipo de arquitectura de "celdas", donde cada modulo se encarga de una tarea lo mas especifica posible. Así, aplicamos el lema "Divide y vencerás" pudiendo manejar operaciones mas voluminosas y complejas. Tambien, como cada modulo funcionaba por separado, se lo podia escalar tanto como se quisiese. Esto facilito el creado de sistemas que aplicaban este paradigma (como supercomputadoras).\newline
 	
-	 Mientras que en el CELL se requeria de una computacion heterogenea como la mencionada anteriormente, en las arquitecturas actuales esto no es así; las actuales no estan diseñadas con nucleos de distintos tipos, a diferencia del Cell. No solo eso, sino tambien el enfoque al paralelizar tareas; el Cell requeria de un manejo especial por parte del desarrollador (con los SPE's), mientras que hoy en dia hay muchas herramientas que lo facilitan.
+	 Mientras que en el CELL se requeria de una computacion heterogenea como la mencionada anteriormente, en las arquitecturas actuales esto no es tan así (no asi en los sistemas que los abarcan. Ej: computadoras dedicadas al Gaming, ya que manejamos nucleos de distintos tipos); las actuales no estan diseñadas con nucleos diferentes, a diferencia del Cell. Entonces, el enfoque al paralelizar tareas variaba; el Cell requeria de un manejo especial por parte del desarrollador (con los SPE's), mientras que hoy en dia hay muchas herramientas que facilitan la division de tareas entre cores.
 	
 	\subsection{Arquitecturas de la competencia}%ARQUITECTURAS DEL MOMENTO
 	\noindent Ya habiendo explicado la arquitectura del CELL, explicaremos algunas de las diferencias con las de la competencia:
@@ -153,14 +153,21 @@
 	
 	
 	\section{Remanentes del Cell en la Actualidad}%Importancia historica
-	\noindent Viendo en retrospectiva, hoy se sigue aplicando hasta cierto punto lo que se promovia en la arquitectura del Cell, pero a gran escala. 
-	Un ejemplo seria en las teleecomunicaciones, y en los datos móviles; siendo las distintas celulas las porciones de terreno con cobertura movil, mediante las torres.
+	\noindent Viendo en retrospectiva, hoy se sigue aplicando hasta cierto punto parte de lo que se promovia en la arquitectura del Cell, pero a gran escala. \newline
 	
-	Hoy en dia se pueden ver los distintos acercamientos que hay al paralelismo, que 
+	Con el diseño de celdas, ejemplos serian las telecomunicaciones, los datos móviles; siendo las distintas celulas las porciones de terreno con cobertura movil, mediante las torres. O tambien como las plataformas funcionando en la nube.	O en los sistemas como computadoras personales, consolas, etc; Tanto en la memoria, diviendose en celdas, o las tareas que realiza un micro-procesador, encargando a los distintos nucleos distintas tareas. Por lo visto, no solo se expandio a arquitecturas, sino a sistemas que abarcan muchas mas cosas.\newline
+	
+	Este tipo de diseño arquetictural nos permite escalar el sistema con facilidad, pudiendo aumentar la carga de trabajo sin tener que reestructurarlo por completo. Tambien, al suceder fallas, estas se aíslan sobre el modulo erroneo y encapsula el error, para poder modularizar, y reemplazarlos con sencillez. Ademas facilita el paralelismo, enfocando las celdas a propositos simples/unicos y eficientando la utilizacion de recursos.\newline
 	
 	
+	Por otro lado, la computacion heterogenea no se vio tan masificada en el diseño de arquitecturas, pero si en el uso de sistemas que los abarquen. Hoy en dia, interesa mas el poder realizar tareas eficientemente, con arquitecturas especializadas, para despues poder complementarlas en un mismo equipo,no asi como se hacia en CELL, que en la misma arquitectura se encontraban nucleos con propositos distintos. 
+		
 	\section{Analisis a futuro}
-	\noindent 
+	\noindent Habiendo visto las distintas aplicaciones que hay hoy en dia con las arquitecturas basadas en celdas, creemos que seguira al alza. No solo se seguirá aplicando a los diseños de microprocesadores y sistemas, sino que se expandira a muchos de los rubros en los que hoy no se lo toma en cuenta. \newline
+	
+	Un ejemplo seria en la agricultura, dividiendo en parcelas los cultivos o ganados, y controlando las cosechas o animales, para revisar en cual se debe focalizar una atención especial.\newline
+	
+	Ahora, creemos que la computacion heterogenea si tiene lugar en el futuro, pero algo similar a como pasa en la actualidad. No que se centre en el interior de los distintos diseños minimales, sino de la manera mas abstracta posible.
 	
 	
 	\section{Conclusion}
