@@ -24,7 +24,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		Este trabajo tratará el procesador CELL de Sony. Se toma un enfoque investigativo y contrastante entre arquitecturas del CELL, y otras de la época (y la actualidad). Las aplicaciones principales para las que fue diseñado, y las aplicaciones que se descubrieron luego junto  con su importancia histórica. Conceptos básicos de computación heterogénea (distintos nucleos). Analisis a futuro relacionandolo a todo.
+		Este trabajo tratará el procesador CELL de Sony. Se toma un enfoque investigativo y contrastante entre arquitecturas del CELL, y otras de la época (y la actualidad). Las aplicaciones principales para las que fue diseñado, y las aplicaciones que se descubrieron luego, junto  con su importancia histórica. Conceptos básicos de computación heterogénea (distintos nucleos). Analisis a futuro relacionandolo a todo.
 	\end{abstract}
 	
 	\begin{IEEEkeywords}
@@ -53,7 +53,7 @@
 	
 	
 	
-	Es necesario comprender que la industria de los juegos estaba al auge. No solo se estaba demandando consolas cada vez mas rapidas y potentes, sino tambien mucha mas gente se introducía a este tipo de consumo.
+	Es necesario comprender que la industria de los juegos estaba al auge. No solo se estaba demandando consolas cada vez mas rápidas y potentes, sino también mucha mas gente se introducía a este tipo de consumo.
 	
 
 	
@@ -69,15 +69,15 @@
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=3.5in]{imgs/marketshare.png}
-	\caption{Porcion del mercado de las consolas, de cada empresa.}
+	\caption{Porción del mercado de las consolas, de cada empresa.}
 	\label{fig1}
 	\end{figure}	
 	
 	
 	\section{Arquitectura CELL}	% MODULOS,ARQUITECTURAS INTERNAS, CONVENCIONES, INSTRUCCIONES, etc
-	\noindent Diseñada por Sony, en conjunto con Toshiba e IBM, esta arquitectura trae al mercado un procesador que maneja fuertemente la computacion heterogenea, mediante el uso de sus 9 nucleos. 
+	\noindent Diseñada por Sony, en conjunto con Toshiba e IBM, esta arquitectura trae al mercado un procesador que maneja fuertemente la computación heterogénea, mediante el uso de sus 9 núcleos. 
 	
-	Si bien originalmente se pensaba incluirlo en dispositivos multimedia y del entretenimiento varios, se termino destinando casi unicamente en la PS3.\newline
+	Si bien originalmente se pensaba incluirlo en dispositivos multimedia y del entretenimiento varios, se termino destinando casi unicamente en la PS3. De todas formas, Sony realmente quería traer una nueva revolución al rubro de diseño de arquitecturas.\newline
 	
 	\begin{figure}[H]
 	\centering
@@ -87,15 +87,13 @@
 	\end{figure}
 	
 	
-	\subsection{Distintos modulos del Cell} 
-	\noindent Para empezar, hablaremos del PPE (Power Processing Element). Este nucleo, es el principal de la arquitectura. Es de proposito general, y a su vez se encarga de controlar el resto de los sub-nucleos (cargar memoria y ejecutar instrucciones).
-	
-	Estaba conformado por 2 niveles de memoria caché, y un PPU (Power Processing Unit).\newline
+	\subsection{Distintos módulos del Cell} 
+	\noindent Para empezar, hablaremos del PPE (Power Processing Element). Este nucleo, es el principal de la arquitectura. Es de proposito general, y a su vez se encarga de controlar el resto de los sub-nucleos (cargar memoria y ejecutar instrucciones). Estaba conformado por 2 niveles de memoria caché, y un PPU (Power Processing Unit).\newline
 	
 	Luego, los SPE (Synergistic Processor Element), son los distintos sub-nucleos de la arquitectura. No son de proposito general, mas bien se encargan de realizar operaciones vectoriales, dirigidas desde el PPE. Cada uno tiene su memoria interna (Local Store), y un modulo Memory Flow Controller para poder recibir/transmitir datos desde el Bús, y un SPU (Synergistic Processing Unit).
-	Trabajan con instrucciones SIMD con punto flotante, pudiendo llegar a realizar 25,6Gflops por segundo (25,6 mil millones de operaciones de punto flotante/s), por cada SPE. Vale la pena mencionar que las instrucciones SIMD se encargan de aplicar la misma operacion a un conjunto de datos, para asi poder obtener un mayor rendimiento en tiempo.\newline
+	Trabajan con instrucciones SIMD con punto flotante, pudiendo llegar a realizar 25,6Gflops por segundo (25,6 mil millones de operaciones de punto flotante/s), por cada SPE. Vale la pena mencionar que las instrucciones SIMD se encargan de aplicar la misma operación a un conjunto de datos, para asi poder obtener un mayor rendimiento en tiempo.\newline
 	
-	\subsection{Interconexion} 
+	\subsection{Interconexión} 
 	\noindent La interconexion de los distintos modulos y nucleos (ademas de la memoria externa, y la interfaz I/O) se realizaba mediante el Element Interconnection Bus. Dicho bus estaba conformado por 4 anillos unidireccionales tokenizados, 2 en cada direcciones. Era un bus tokenizado, por ende la informacion no se retransmitia mas de lo que debia, mediante un identificador del modulo al que debia llegar la informacion. 
 	Por como estaba armado, nunca seria posible saturar dicho bus (ancho de banda interno maximo de 204,8GB/s).
 	
@@ -104,17 +102,16 @@
 	\subsection{Computacion heterogenea en el Cell }% SIMD
 	\noindent La computacion heterogenea puede ser entendida como aquella computacion que requiere el manejo y codificado de instrucciones para una arquitectura que use distintos tipos de nucleos.\newline
 	
-	 Resulta que la computacion heterogenea, en el Cell, se aplica a los distintos SPE que residen en el mismo. De forma, que no solo programamos el PPE, sino los SPE, los cuales reciben sus instrucciones (y memoria cargada) del anterior mencionado. Ademas, el propio desarrollador puede realizar cierto tipo de pipelining; Paralelizar los programas de los SPE,vectorizandolos y computarizando las salidas de los mismos.\newline
+	A gran escala, podriamos decir que la gran mayoria de consolas o computadoras orientadas al Gaming, hoy en dia, requieren de la misma; Se debe instruccionar al CPU,GPU, etc. Sucede lo mismo con Modelados de Financiacion, o de computacion Cientifica, los cuales se benefician de ambos aspectos. Sin embargo, se puede dar a una escala muchisimo mas chica.\newline
+	
+	 Resulta que la computacion heterogenea, dentro del Cell, se aplica a los distintos SPE que residen en el mismo. De forma, que no solo programamos el PPE, sino los SPE, los cuales reciben sus instrucciones (y memoria cargada) del anterior mencionado. Ademas, el propio desarrollador puede realizar cierto tipo de pipelining; Paralelizar los programas de los SPE,vectorizandolos y computarizando las salidas de los mismos.\newline
 	 
 	 El codigo destinado a los SPE's debe ser escrito aparte del programa del PPE, y traducido a codigo maquina por compiladores especificos de SPE's
 	
 	\subsection{Diferencias con arquitecturas actuales}
-	\noindent Mientras que en el CELL se requeria de una computacion heterogenea como la mencionada anteriormente, en las arquitecturas actuales esto no es así; las actuales no estan diseñadas con nucleos de distintos tipos, a diferencia del Cell.
+	\noindent La idea del CellBE era aplicar el tipo de arquitectura de "celdas", donde cada modulo se encarga de una tarea lo mas especifica posible. Así, aplicamos el lema "Divide y vencerás" pudiendo manejar operaciones mas voluminosas y complejas. Tambien, como cada modulo funcionaba por separado, se lo podia escalar tanto como se quisiese. Esto facilito el creado de sistemas que aplicaban este paradigma (como supercomputadoras).\newline
 	
-	No solo eso, sino tambien el enfoque al paralelizar tareas; el Cell requeria de un manejo especial por parte del desarrollador (con los SPE's), mientras que hoy en dia hay muchas herramientas que lo facilitan.
-	
-	\subsection{Puntos fuerte}
-	\noindent
+	 Mientras que en el CELL se requeria de una computacion heterogenea como la mencionada anteriormente, en las arquitecturas actuales esto no es así; las actuales no estan diseñadas con nucleos de distintos tipos, a diferencia del Cell. No solo eso, sino tambien el enfoque al paralelizar tareas; el Cell requeria de un manejo especial por parte del desarrollador (con los SPE's), mientras que hoy en dia hay muchas herramientas que lo facilitan.
 	
 	\subsection{Arquitecturas de la competencia}%ARQUITECTURAS DEL MOMENTO
 	\noindent Ya habiendo explicado la arquitectura del CELL, explicaremos algunas de las diferencias con las de la competencia:
@@ -137,47 +134,33 @@
 		
 	Esto provoca una performance mediocre en la mayoria de programas realizados por desarrolladores con poco conocimiento y experiencia en este paradigma. El Cell tenia potencial, pero requeria un codigo extremadamente consiso, con pocos condicionales y que mantuviese ocupado a los 7 nucleos totales en todo momento.\newline
 	
-	Por si no era suficiente, el costo de fabricacion de la consola, durante parte de los primeros 3 años del lanzamiento, rondaba alrededor de los US\$ 900, mientras que el precio para el consumidor final era de US\$ 500; Sumado a que Microsoft ya habia lanzado su consola hace un año atrás, ganando gran parte del mercado. \newline
-	
-	Finalmente los consumidores a los que se destinó el producto, lo rechazan en gran medida.
+	Por si no era suficiente, el costo de fabricacion de la consola, durante parte de los primeros 3 años del lanzamiento, rondaba alrededor de los US\$ 900, mientras que el precio para el consumidor final era de US\$ 500; Sumado a que Microsoft ya habia lanzado su consola hace un año atrás, ganando gran parte del mercado. Finalmente los consumidores a los que se destinó el producto, lo rechazan en gran medida.
 	
 	
 	\section{Aplicaciones del CELL}
-	\noindent Sin importar el resultado de la aplicacion de la arquitectura, a la arquitectura CELL se la utilizó para otras aplicaciones, como modelos de simulacion, o en la computarizacion masiva de datos:
+	\noindent Sin importar el resultado de la aplicacion de la arquitectura, a la arquitectura CELL se la utilizó para otras aplicaciones generales, como modelos de simulacion, o en la computarizacion masiva de datos:
 	
 	\begin{itemize}
 		
 		\item{{\bf{Clima}}: Ya que para replicar efectos meteorologicos como las nubes, y para procesar el inmenso volumen de informacion que llega desde los instrumentos usados para las distintas mediciones requería de un sistema que pudiese realizar estas tareas intensivas, se decidió experimentar con esta arquitectura, para diseñar mas adelante una solucion apropiada (que solucionase tambien los problemas que había con el ancho de banda limitado de memoria).}\newline
 		
-		\item{{\bf{Supercomputadoras}}:}\newline
+		\item{{\bf{Simulacion}}: Un gran ejemplo de esto es el RoadRunner, una supercomputadora que llegó a operar a 1 petaflops (mill trillones de operaciones de punto flotante/s), capaz de simular explosiones nuclear, y demas cuestiones armamentísticas del gobierno de los Estados Unidos.}\newline
 		
-		\item{{\bf{Medicina}}:}\newline
+		\item{{\bf{Medicina}}: Fue util el cell, ya que facilita procesar la salida de las tomografias computarizadas de un uso intensivo de recursos, para reconstruir imagenes médicas 3D.}
 
 	\end{itemize}
 	Como tambien en la industria petrolera y gasífera, en servidores, como tambien en la Construccion y Arquitectura mediante modelos de simulacion.
 	
-
-	
-	\subsection{Research and Development}
-	\noindent
-	
-	
 	
 	\section{Remanentes del Cell en la Actualidad}%Importancia historica
-	\noindent Hoy en dia se pueden ver los distintos acercamientos que hay al paralelismo, que 
+	\noindent Viendo en retrospectiva, hoy se sigue aplicando hasta cierto punto lo que se promovia en la arquitectura del Cell, pero a gran escala. 
+	Un ejemplo seria en las teleecomunicaciones, y en los datos móviles; siendo las distintas celulas las porciones de terreno con cobertura movil, mediante las torres.
 	
-	
-	
-	
-	
+	Hoy en dia se pueden ver los distintos acercamientos que hay al paralelismo, que 
 	
 	
 	\section{Analisis a futuro}
 	\noindent 
-	
-	
-	
-	
 	
 	
 	\section{Conclusion}
@@ -229,9 +212,11 @@
 			
 			\bibitem{ams}
 			{\it{PlayStation 3, Console Wars and the Costs of Complexity}}, 			
-			https://arstechnica.com/features/2005/02/cell-1/
+			https://arstechnica.com/features/2005/02/cell-1/\newline
 			
-
+			\bibitem{ams}
+			{\it{Cell-Based Architecture: The Backbone of Scalable Systems}}, 			
+			https://medium.com/@jishanrandika/cell-based-architecture-the-backbone-of-scalable-systems-2b5ea50cbe1c
 			
 		
 		\end{thebibliography}
