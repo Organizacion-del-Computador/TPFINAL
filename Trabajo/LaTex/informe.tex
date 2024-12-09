@@ -1,4 +1,4 @@
-\documentclass[11pt,compsoc]{IEEEtran}
+\documentclass[10pt,compsoc]{IEEEtran}
 \usepackage[spanish]{babel}
 \usepackage{amsmath,amsfonts}
 \usepackage{algorithmic}
@@ -6,6 +6,7 @@
 \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 \usepackage{textcomp}
 \usepackage{stfloats}
+\usepackage{float}
 \usepackage{url}
 \usepackage{verbatim}
 \usepackage{graphicx}
@@ -31,7 +32,7 @@
 	\end{IEEEkeywords}
 	
 	\section{Introducción}
-	\IEEEPARstart{A} mediados de los 2000, la empresa Sony empieza a investigar y desarrollar su sistema de entretenimiento "Play-Station 3". Todo esto en un mercado competitivo frente a otras marcas como Microsoft y Nintendo. Terminan con un procesador multi-core, el cual tiene como particularidades los sub-nucleos. Sony tambien quería estandarizar su procesador en dispositivos de todas las gamas y usos multimedias.
+	\IEEEPARstart{A} mediados de los 2000, mientras los CPU's multinucleo recien se estaban introduciendo al mercado, la empresa Sony empieza a investigar y desarrollar su sistema de entretenimiento "Play-Station 3". Todo esto en un mercado competitivo frente a otras marcas como Microsoft y Nintendo. Terminan diseñando un procesador multi-core, el cual tiene como particularidades los sub-nucleos. Sony tambien quería estandarizar su procesador en dispositivos de todas las gamas y usos multimedias.
 	
 	Sin embargo, tanto el producto como su procesador,fueron un fracaso comercial. Sin embargo, se descubrieron usos investigativos/científicos/economicos, entre otros.
 	
@@ -49,12 +50,28 @@
 		
 		\item{{\bf{Nintendo}}: tuvo un exito pobre en su consola anterior, la Gamecube. En la Wii, se decide no hacer costos de fabricacion muy caros. Pero además, se centra en facilitar experiencias novedosas para el usuario final, mediante el uso de movimientos corporales para controlar los juegos, como extensiones al mismo control (volantes, soportes, etc).}
 	\end{itemize}
-	Para comprender un poco mas la magnitud del la importancia del mercado, los siguiente graficos muestran como alrededor de esos años, la industria de los videojuegos crece de una manera formidable, tanto como la porcion del mercado de cada empresa.
 	
-	\begin{center}
-		{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{imgs/marketshare.png}}\newline\newline
-		{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{imgs/gamingshare.png}}
-	\end{center}
+	
+	
+	Es necesario comprender que la industria de los juegos estaba al auge. No solo se estaba demandando consolas cada vez mas rapidas y potentes, sino tambien mucha mas gente se introducía a este tipo de consumo.
+	
+
+	
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=3.5in]{imgs/gamingshare.png}
+	\caption{Análisis del mercado del entretenimiento, entrando al nuevo milenio.}
+	\label{fig2}
+	\end{figure}
+	
+	
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=3.5in]{imgs/marketshare.png}
+	\caption{Porcion del mercado de las consolas, de cada empresa.}
+	\label{fig1}
+	\end{figure}	
 	
 	
 	\section{Arquitectura CELL}	% MODULOS,ARQUITECTURAS INTERNAS, CONVENCIONES, INSTRUCCIONES, etc
@@ -62,9 +79,12 @@
 	
 	Si bien originalmente se pensaba incluirlo en dispositivos multimedia y del entretenimiento varios, se termino destinando casi unicamente en la PS3.\newline
 	
-	\begin{center}
-		{\includegraphics[width=4in,height=4in,clip,keepaspectratio]{imgs/arquitecturacell.png}}\newline
-	\end{center}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=3.5in]{imgs/arquitecturacell.png}
+	\caption{Arquitectura del CELL Broadband Engine.}
+	\label{fig3}
+	\end{figure}
 	
 	
 	\subsection{Distintos modulos del Cell} 
@@ -79,6 +99,8 @@
 	\noindent La interconexion de los distintos modulos y nucleos (ademas de la memoria externa, y la interfaz I/O) se realizaba mediante el Element Interconnection Bus. Dicho bus estaba conformado por 4 anillos unidireccionales tokenizados, 2 en cada direcciones. Era un bus tokenizado, por ende la informacion no se retransmitia mas de lo que debia, mediante un identificador del modulo al que debia llegar la informacion. 
 	Por como estaba armado, nunca seria posible saturar dicho bus (ancho de banda interno maximo de 204,8GB/s).
 	
+
+	
 	\subsection{Computacion heterogenea en el Cell }% SIMD
 	\noindent La computacion heterogenea puede ser entendida como aquella computacion que requiere el manejo y codificado de instrucciones para una arquitectura que use distintos tipos de nucleos.\newline
 	
@@ -91,34 +113,50 @@
 	
 	No solo eso, sino tambien el enfoque al paralelizar tareas; el Cell requeria de un manejo especial por parte del desarrollador (con los SPE's), mientras que hoy en dia hay muchas herramientas que lo facilitan.
 	
+	\subsection{Puntos fuerte}
+	\noindent
+	
 	\subsection{Arquitecturas de la competencia}%ARQUITECTURAS DEL MOMENTO
 	\noindent Ya habiendo explicado la arquitectura del CELL, explicaremos algunas de las diferencias con las de la competencia:
 	
 	\begin{itemize}
 				
-		\item{{\bf{Microsoft}}: En la X-Box 360, se diseña una arquitectura gracias a IBM que tiene ciertas similaridades con el Cell. Por empezar, el procesador de la consola era el Xenon, de 3 cores. Aquellos cores eran PPE's, como los del Cell, sin embargo, no se encontraba en la arquitectura ningun SPE. Los PPE's se interconectaban mediante un bús XBAR.}\newline
+		\item{{\bf{Microsoft}}: En la X-Box 360, se diseña una arquitectura gracias a IBM que tiene ciertas similaridades con el Cell. Por empezar, el procesador de la consola era el Xenon, de 3 cores. Aquellos cores eran PPE's, como los del Cell, sin embargo, no se encontraba en la arquitectura ningun SPE. Los PPE's, tanto como el resto de modulos, se interconectaban mediante un bús XBAR. A grandes rasgos, es la otra compania del momento la cual tambien busca un acercamiento al paralelismo.}\newline
 		
 		\item{{\bf{Nintendo}}:En la Wii, tambien se recurre a IBM. Resulta que el procesador que termina ocupando la Wii (Broadway), es un rebranding de la arquitectura ya usada por el producto anterior, la Gamecube. Esto es asi ya que Nintendo pide a IBM un CPU, entonces IBM modifica la arquitectura, haciendola correr a un clock mayor.\newline
 		
-		Por otro lado, la Wii tambien poseia un Co-Procesador llamado Starlet, el cual se encargaba de tareas menores como el manejo de perifericos o retrocompatibilidad con juegos de consolas anteriores, o hasta del firmware de la consola.}
+		Por otro lado, la Wii tambien poseia un Co-Procesador llamado Starlet, el cual se encargaba de tareas menores como el manejo de perifericos o retrocompatibilidad con juegos de consolas anteriores, o hasta del firmware de la consola. Sin embargo, el manejoa de estos dos CPU's se alejaba bastante de la computacion heterogena que requería el Cell.}
 	\end{itemize}
 	
 	\section{Inconveniencias}
-	\noindent Debido a que programar los distintos SSP requerían mucho tiempo, una gran cantidad  de desarrolladores pasaron por alto los programas apartes que requerian los mismos, y se centraban unicamente en el PPE, que terminaba realizando todas las tareas eran. Esto provoca bajos rendimientos en los programas que corria el CELL, ya que sus SPE's quedaban inutilizados.\newline
+	\noindent Debido a que programar los distintos SSP requerían mucho tiempo, una gran cantidad  de desarrolladores pasaron por alto los programas apartes que requerian los mismos, y se centraban unicamente en el PPE, que terminaba realizando todas las tareas. Esto provoca bajos rendimientos en los programas que corria el CELL, ya que sus SPE's quedaban inutilizados.\newline
 	
-	Muchas tareas que se podian paralelizar, no se estaban ejecutando como debían, ni por los sub-nucleos especializados para eso. 
+	Muchas tareas que se podian paralelizar, no se estaban ejecutando como debían, ni por los sub-nucleos especializados para eso. Ademas, lo SPE's tampoco tenian branch prediction, por lo que sentencias como if/else eran supervisadas por el PPE, asignandole mas tareas.\newline
 	
-	Esto provoca una performance mediocre en la mayoria de programas realizados por desarrolladores con poco conocimiento y experiencia en este paradigma.
-	
-	Finalmente el mercado al que se destino el producto, lo rechaza en cierta medida.
+	 
 		
+	Esto provoca una performance mediocre en la mayoria de programas realizados por desarrolladores con poco conocimiento y experiencia en este paradigma. El Cell tenia potencial, pero requeria un codigo extremadamente consiso, con pocos condicionales y que mantuviese ocupado a los 7 nucleos totales en todo momento.\newline
+	
+	Por si no era suficiente, el costo de fabricacion de la consola, durante parte de los primeros 3 años del lanzamiento, rondaba alrededor de los US\$ 900, mientras que el precio para el consumidor final era de US\$ 500; Sumado a que Microsoft ya habia lanzado su consola hace un año atrás, ganando gran parte del mercado. \newline
+	
+	Finalmente los consumidores a los que se destinó el producto, lo rechazan en gran medida.
 	
 	
 	\section{Aplicaciones del CELL}
-	\noindent 
+	\noindent Sin importar el resultado de la aplicacion de la arquitectura, a la arquitectura CELL se la utilizó para otras aplicaciones, como modelos de simulacion, o en la computarizacion masiva de datos:
 	
-	\subsection{Puntos fuerte}
-	\noindent
+	\begin{itemize}
+		
+		\item{{\bf{Clima}}: Ya que para replicar efectos meteorologicos como las nubes, y para procesar el inmenso volumen de informacion que llega desde los instrumentos usados para las distintas mediciones requería de un sistema que pudiese realizar estas tareas intensivas, se decidió experimentar con esta arquitectura, para diseñar mas adelante una solucion apropiada (que solucionase tambien los problemas que había con el ancho de banda limitado de memoria).}\newline
+		
+		\item{{\bf{Supercomputadoras}}:}\newline
+		
+		\item{{\bf{Medicina}}:}\newline
+
+	\end{itemize}
+	Como tambien en la industria petrolera y gasífera, en servidores, como tambien en la Construccion y Arquitectura mediante modelos de simulacion.
+	
+
 	
 	\subsection{Research and Development}
 	\noindent
@@ -143,53 +181,55 @@
 	
 	
 	\section{Conclusion}
-	\noindent
+	\noindent Creemos que, si bien el enfoque que tomo Sony con su arquitectura originalmente compartida por dispositivos varios del mundo del entretenimiento no tuvo un exito considerable, fue util para aproximarse al mundo de la computacion heterogenea, y para darle otro foco a la capacidad de conseguir un mayor rendimiento en los procesadores venideros, no solo aumentando el clock de los mismos.
 	
 	
 		\begin{thebibliography}{1}
 			
 			\bibitem{ams}
-			{\it{Laboratorio de Arquitecturas Avanzadas con Cell y PlayStation 3}}, Universitat de València, por Fernando Pardo y Jose A. Boluda.
+			{\it{Laboratorio de Arquitecturas Avanzadas con Cell y PlayStation 3}}, Universitat de València, por Fernando Pardo y Jose A. Boluda.\newline
 			
 			\bibitem{ams}
-			{\it{The PlayStation 3 for High Performance Scientific Computing}}, University of Tennessee: Jakub Kurzak,		Alfredo Buttari, Piotr Luszczek, Jack Dongarra
-			
-			\bibitem{oxford}
-			{\it{Un vistazo al pasado, ¿cómo de potente fue PS3? }},https://www.3djuegos.com/ps3/noticias/un-vistazo-al-pasado-como-de-potente-fue-ps3-190331-91210
-		
-			\bibitem{ams}
-			{\it{The PlayStation Supercomputer}}, https://www.datacenterdynamics.com/en/analysis/the-playstation-supercomputer/
+			{\it{The PlayStation 3 for High Performance Scientific Computing}}, University of Tennessee: Jakub Kurzak, Alfredo Buttari, Piotr Luszczek, Jack Dongarra\newline
 			
 			\bibitem{ams}
-			{\it{The Untold Story of the Cell Processor: Sony's Pioneering Technology in Gaming}}, https://www.gameversedaily.com/post/the-untold-story-of-the-cell-processor-sony-s-pioneering-technology-in-gaming
+			{\it{The impact of IBM Cell technology on the programming paradigm in the context of computer systems	for climate and weather	models}}, Shujia Zhou, Daniel Duffy, Thomas Clune, Max Suarez, 	Samuel Williams, Milton Halem.\newline
 			
+			\bibitem{ams}
+			{\it{Architecture of Consoles: A practical analysis by Rodrigo Copetti}}, 
+			https://www.copetti.org/writings/consoles/\newline
+			
+			\bibitem{ams}
+			{\it{Cell Technology Tackles 3D Medical Imaging Reconstruction Challenges}}, https://www.techbriefs.com/component/content/article/6088-10976-400\newline
+			
+			\bibitem{ams}
+			{\it{Breaking the petaflop barrier}},
+			https://www.ibm.com/history/petaflop-barrier\newline
+			
+			\bibitem{ams}
+			{\it{Introducing the IBM/Sony/Toshiba Cell Processor ? Part I: the SIMD processing units}},
+			https://arstechnica.com/features/2005/02/cell-1/\newline
+			
+			\bibitem{ams}
+			{\it{The PlayStation Supercomputer}}, https://www.datacenterdynamics.com/en/analysis/the-playstation-supercomputer/\newline
+	
 			\bibitem{ams}
 			{\it{Console wars: A rare bright spot in the gloomy technology industry, video games are growing up}}, 
-			https://www.economist.com/business/2002/06/20/console-wars
+			https://www.economist.com/business/2002/06/20/console-wars\newline
 			
-			\bibitem{ams}
-			{\it{Console wars}}, 			https://www.ft.com/content/ef24f36e-5c54-11dc-9cc9-0000779fd2ac
-			
+
 			\bibitem{ams}
 			{\it{Console wars}}, 			
-			https://www.gainesville.com/story/news/2006/11/11/waging-console-war/31502430007/
+			https://www.gainesville.com/story/news/2006/11/11/waging-console-war/31502430007/\newline
 			
 			\bibitem{ams}
 			{\it{PlayStation 3, Console Wars and the Costs of Complexity}}, 			
-			https://techliberation.com/2006/09/07/playstation-3-console-wars-the-costs-of-complexity/
+			https://techliberation.com/2006/09/07/playstation-3-console-wars-the-costs-of-complexity/\newline
+			
 			
 			\bibitem{ams}
-			{\it{Console giants square up}}, 			
-			http://news.bbc.co.uk/2/hi/entertainment/2002112.stm
-			
-			\bibitem{ams}
-			{\it{Report from the video game wars: Wii vs. PS3 vs. Xbox360}}, 
-			https://fabricegrinda.com/report-from-the-video-game-wars-wii-vs-ps3-vs-xbox360/
-			
-			\bibitem{ams}
-			{\it{Report from the video game wars: Wii vs. PS3 vs. Xbox360}}, 
-			https://www.copetti.org/writings/consoles/
-			
+			{\it{PlayStation 3, Console Wars and the Costs of Complexity}}, 			
+			https://arstechnica.com/features/2005/02/cell-1/
 			
 
 			
