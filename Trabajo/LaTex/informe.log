@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.27)  11 DEC 2024 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.27)  11 DEC 2024 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,8 +781,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 163--164
-[]\OT1/ppl/m/n/9.53561 Con el di-se[]no de cel-das, ejem-plos ser[]^^Pan las
+Underfull \hbox (badness 2221) in paragraph at lines 163--164
+[]\OT1/ppl/m/n/9.53561 Con el di-se[]no de cel-das, ejem-plos ser[]^^Pan en las
+
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 163--164
+\OT1/ppl/m/n/9.53561 cel-das las por-cio-nes de te-rreno con co-ber-tu-ra m[]ov
+il,
  []
 
 
@@ -1007,8 +1014,14 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: 70C70366C64A22B7E9F6DE8BFA6E56E5;2476.
+
+Package rerunfilecheck Warning: File `informe.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `informe.out':
+(rerunfilecheck)             Before: 70C70366C64A22B7E9F6DE8BFA6E56E5;2476
+(rerunfilecheck)             After:  4012C0EE6580CD089E7A658440CA7E0D;2482.
  ) 
 Here is how much of TeX's memory you used:
  13529 strings out of 476047
@@ -1024,7 +1037,7 @@ xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/u
 zdr.pfb>
-Output written on informe.pdf (4 pages, 350646 bytes).
+Output written on informe.pdf (4 pages, 350781 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  122 compressed objects within 2 object streams

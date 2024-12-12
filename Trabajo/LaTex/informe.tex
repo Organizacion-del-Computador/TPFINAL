@@ -25,7 +25,7 @@
 \begin{document}
 	\title{El procesador CELL, desde un enfoque
 		histórico}
-	\author{Ramiro Barcala Roca, Valentin Angrigiani, Gabriel Hackl}
+	\author{Ramiro Barcala Roca, Valentín Angrigiani, Gabriel Hackl}
 		
 	\markboth{Organizacion del Computador, Catedra Marchi, 2024}%
 	{How to Use the IEEEtran \LaTeX \ Templates}
@@ -36,7 +36,7 @@
 	\end{abstract}
 	
 	\begin{IEEEkeywords}
-		SPE, PPE, SIMD, Pipeline/ing, Paralelismo, Calculos vectoriales, Computacion heterogenea, Celdas.
+		SPE, PPE, SIMD, Pipeline/ing, Paralelismo, Calculos vectoriales, Computación heterogénea, Celdas.
 	\end{IEEEkeywords}
 	
 	\section{Introducción}
@@ -106,8 +106,8 @@
 	
 
 	
-	\subsection{Computacion heterogenea en el Cell}% SIMD
-	\noindent La computacion heterogénea puede ser entendida como aquella computación que requiere el manejo y codificado de instrucciones para una arquitectura que usa distintos tipos de núcleos.\newline
+	\subsection{Computación heterogénea en el Cell}% SIMD
+	\noindent La computación heterogénea puede ser entendida como aquella computación que requiere el manejo y codificado de instrucciones para una arquitectura que usa distintos tipos de núcleos.\newline
 	
 	A gran escala, podríamos decir que la gran mayoría de consolas o computadoras orientadas al \textit{Gaming}, hoy en dia, requieren de la misma. Se debe instruccionar al CPU, GPU, etcétera. Sucede lo mismo con modelados de financiación o de computación científica, los cuales se benefician de ambos aspectos. Sin embargo, se puede dar a una escala muchísimo más chica.\newline
 	
@@ -129,7 +129,7 @@
 		
 		\item{{\bf{Nintendo}}: En la Wii, también se recurre a IBM. Resulta que el procesador que termina ocupando esta consola (Broadway), es un \textit{rebranding} de la arquitectura ya usada por el producto anterior (la Gamecube). Esto es así ya que IBM modifica la arquitectura que le pide Nintendo, haciéndola correr a un clock mayor.\newline
 		
-		Por otro lado, la Wii tambien poseía un coprocesador llamado Starlet, el cual se encargaba de tareas menores como el manejo de periféricos o retrocompatibilidad con juegos de consolas anteriores, o hasta del firmware de la consola. Sin embargo, el manejo de estos dos CPU's se alejaba bastante de la computación heterogénea que requería el Cell.}
+		Por otro lado, la Wii también poseía un coprocesador llamado Starlet, el cual se encargaba de tareas menores como el manejo de periféricos o retrocompatibilidad con juegos de consolas anteriores, o hasta del firmware de la consola. Sin embargo, el manejo de estos dos CPU's se alejaba bastante de la computación heterogénea que requería el Cell.}
 	\end{itemize}
 	
 	\section{Inconveniencias}
@@ -160,7 +160,7 @@
 	\section{Remanentes del CELL en la Actualidad}%Importancia historica
 	\noindent Viendo en retrospectiva, hoy se sigue aplicando hasta cierto punto parte de lo que se promovía en la arquitectura, pero a gran escala.\newline
 	
-	Con el diseño de celdas, ejemplos serían las telecomunicaciones, los datos móviles; siendo las distintas células las porciones de terreno con cobertura móvil, mediante las torres. O también como las plataformas funcionando en la nube, o en los sistemas como computadoras personales, consolas, etcétera. Tanto en la memoria diviéndose en celdas, o las tareas que realiza un microprocesador, encargando a los distintos núcleos distintas tareas. Por lo visto, no solo se expandió a arquitecturas, sino a sistemas que abarcan muchas más cosas.\newline
+	Con el diseño de celdas, ejemplos serían en las telecomunicaciones y los datos móviles, siendo las distintas celdas las porciones de terreno con cobertura móvil, mediante las torres. O también como las plataformas funcionando en la nube, o en los sistemas como computadoras personales, consolas, etcétera. Tanto en la memoria diviéndose en celdas, o las tareas que realiza un microprocesador, encargando a los distintos núcleos distintas tareas. Por lo visto, no solo se expandió a arquitecturas, sino a sistemas que abarcan muchas más cosas.\newline
 	
 	Este tipo de diseño arquitectural nos permite escalar el sistema con facilidad, pudiendo aumentar la carga de trabajo sin tener que reestructurarlo por completo. También, al suceder fallas, estas se aíslan sobre el módulo erróneo y encapsula el error, para poder modularizar, y reemplazarlo con sencillez. Además facilita el paralelismo, enfocando las celdas a propósitos simples/únicos y eficientando la utilización de recursos.\newline
 	
